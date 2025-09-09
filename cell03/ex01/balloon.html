@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exploding Balloon</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    #balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body>
+  <div id="balloon"></div>
+
+  <script>
+    const balloon = document.getElementById('balloon');
+    let size = 200;
+    const maxSize = 420;
+    const minSize = 200;
+    const colors = ['red', 'green', 'blue'];
+    let colorIndex = 0;
+
+    // ✅ ฟังก์ชันเปลี่ยนสีถัดไป
+    function nextColor() {
+      colorIndex = (colorIndex + 1) % colors.length;
+      return colors[colorIndex];
+    }
+
+    // ✅ ฟังก์ชันเปลี่ยนสีย้อนกลับ
+    function prevColor() {
+      colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+      return colors[colorIndex];
+    }
+
+    // ✅ เมื่อคลิกบอลลูน
+    balloon.addEventListener('click', () => {
+      size += 10;
+
+      if (size > maxSize) {
+        // ระเบิด
+        size = minSize;
+        colorIndex = 0;
+      } else {
+        balloon.style.backgroundColor = nextColor();
+      }
+
+      balloon.style.width = `${size}px`;
+      balloon.style.height = `${size}px`;
+    });
+
+    // ✅ เมื่อเมาส์ออกจากบอลลูน
+    balloon.addEventListener('mouseleave', () => {
+      if (size > minSize) {
+        size -= 5;
+        balloon.style.width = `${size}px`;
+        balloon.style.height = `${size}px`;
+        balloon.style.backgroundColor = prevColor();
+      }
+    });
+  </script>
+</body>
+</html>
