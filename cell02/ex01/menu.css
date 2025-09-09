@@ -1,58 +1,74 @@
-/* Reset */
 body {
-  margin: 0;
-  font-family: sans-serif;
-  background: #fff4f4;
-}
-
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #ff5e5e;
-  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdf5e6;
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.menu ul li {
+.dropdown {
   position: relative;
+  display: inline-block;
 }
 
-.menu ul li a {
-  display: block;
-  padding: 14px 20px;
-  text-decoration: none;
+.dropbtn {
+  background-color: #e07b39; /* sandwich crust */
   color: white;
+  padding: 16px 24px;
+  font-size: 18px;
   font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-.menu ul li a:hover {
-  background-color: #e04848;
-}
-
-/* Dropdown part */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #ffb3b3;
-  min-width: 160px;
+  background-color: #fff8dc;
+  min-width: 220px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  margin-top: 8px;
+  overflow: hidden;
   z-index: 1;
-  top: 100%;
-  left: 0;
 }
 
-.dropdown-content li a {
-  color: black;
-  padding: 12px 16px;
+.dropdown-content a {
+  padding: 14px 20px;
   display: block;
-  text-align: left;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
-.dropdown-content li a:hover {
-  background-color: #ffa1a1;
+.dropdown-content a:hover {
+  background-color: #f1e7d1;
+}
+
+/* Themed ingredient colors */
+.bread-top {
+  background-color: #f4e2b0;
+}
+.lettuce {
+  background-color: #c4e17f;
+}
+.ham {
+  background-color: #eaa0a2;
+}
+.cheese {
+  background-color: #ffd966;
+}
+.bread-bottom {
+  background-color: #f4e2b0;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #d1692d;
 }
