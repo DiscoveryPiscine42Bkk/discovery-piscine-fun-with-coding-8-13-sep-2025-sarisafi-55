@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator (jQuery)</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>It's over 9000!</h1>
+
+  <input type="text" id="left" placeholder="Left operand">
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+  <input type="text" id="right" placeholder="Right operand">
+  <button id="calcBtn">Try me!</button>
+
+  <script>
+    $(function () {
+      $('#calcBtn').on('click', function () {
+        const left = $('#left').val();
+        const right = $('#right').val();
+        const operator = $('#operator').val();
+
+        const leftNum = parseInt(left);
+        const rightNum = parseInt(right);
+
+        if (isNaN(leftNum) || isNaN(rightNum) || leftNum < 0 || rightNum < 0) {
+          alert("Error :(");
+          return;
+        }
+
+        if ((operator === '/' || operator === '%') && rightNum === 0) {
+          alert("It's over 9000!!");
+          console.log("It's over 9000!!");
+          return;
+        }
+
+        let result;
+        switch (operator) {
+          case '+':
+            result = leftNum + rightNum;
+            break;
+          case '-':
+            result = leftNum - rightNum;
+            break;
+          case '*':
+            result = leftNum * rightNum;
+            break;
+          case '/':
+            result = leftNum / rightNum;
+            break;
+          case '%':
+            result = leftNum % rightNum;
+            break;
+        }
+
+        alert(result);
+        console.log(result);
+      });
+
+      // แจ้งเตือนทุก 30 วินาที
+      setInterval(function () {
+        alert("Please, use me...");
+      }, 30000);
+    });
+  </script>
+</body>
+</html>
