@@ -1,0 +1,39 @@
+body, html {
+  margin: 0;
+  font-family: sans-serif;
+  scroll-behavior: smooth;
+}
+
+.parallax {
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image1 {
+  background-image: url('your-first-image.jpg'); /* ใส่รูปจริงของคุณ */
+}
+
+.image2 {
+  background-image: url('your-second-image.jpg'); /* ใส่รูปจริงของคุณ */
+}
+
+.text {
+  color: white;
+  font-size: 2em;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.content {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
