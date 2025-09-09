@@ -1,70 +1,30 @@
-/* รีเซ็ต margin และ padding */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* ตารางครอบคลุมเต็มหน้าจอ */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: fixed; /* เพื่อให้แต่ละคอลัมน์ขนาดเท่ากัน */
-}
-
-/* กำหนดเส้นขอบตาราง */
-table, th, td {
-  border: 1px solid black;
-}
-
-/* จัดข้อความในหัวตารางตรงกลาง */
-th {
-  background-color: #f2f2f2;
-  text-align: center;
-  padding: 10px;
-}
-
-/* กำหนดช่องตาราง */
-td {
-  padding: 10px;
-  text-align: center;
-  word-wrap: break-word;
-}
-
-/* ปรับรูปภาพไม่ให้เกินขนาดเซลล์ */
-td img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Responsive สำหรับหน้าจอเล็ก */
-@media screen and (max-width: 600px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     width: 100%;
-  }
+}
 
-  thead tr {
-    display: none; /* ซ่อนหัวตาราง */
-  }
+table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* ช่องหด/ขยายอัตโนมัติ */
+}
 
-  tr {
-    margin-bottom: 15px;
-  }
-
-  td {
-    text-align: right;
-    padding-left: 50%;
-    position: relative;
-  }
-
-  td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 10px;
-    width: 45%;
-    padding-left: 10px;
+td {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
     font-weight: bold;
-    text-align: left;
-  }
+    border: 2px solid #333;
+    font-size: calc(1em + 2vw); /* responsive font */
+}
+
+.box1 {
+    background-color: #4CAF50; /* สีเขียว */
+}
+
+.box2 {
+    background-color: #FFB178; /* ส้มนู้ด (nude orange) */
 }
