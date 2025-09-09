@@ -2,106 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Responsive Colored Table</title>
+  <title>Tab Exercise</title>
   <style>
-    /* CSS สำหรับตาราง */
+    /* ให้ body และ html กินเต็มจอ */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
     table {
       width: 100%;
+      height: 100%;
       border-collapse: collapse;
+      table-layout: fixed; /* ให้ cell ปรับขนาดอัตโนมัติ */
+    }
+
+    td {
+      padding: 20px;
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-    }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
+      font-size: calc(1em + 1vw); /* Responsive font size */
+      word-wrap: break-word;
       text-align: center;
+      vertical-align: middle;
     }
 
-    thead {
-      background-color: #4CAF50; /* สีพื้นหลังหัวตาราง */
-      color: white;
-      font-weight: bold;
+    .first-cell {
+      background-color: #b5b86c; /* สีเขียวเหลือง */
+      color: black;
     }
 
-    tbody tr:nth-child(even) {
-      background-color: #e8f5e9; /* สีพื้นหลังแถวคู่ */
+    .second-cell {
+      background-color: #f7b7a3; /* สีชมพูอ่อน */
+      color: black;
     }
 
-    tbody tr:hover {
-      background-color: #c8e6c9; /* สีตอนเอาเมาส์วาง */
-    }
-
-    /* ทำให้ตาราง Responsive */
-    @media screen and (max-width: 600px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
-
-      tr {
-        margin-bottom: 15px;
-        border: 1px solid #ddd;
-        padding: 10px;
-        background-color: white;
-      }
-
+    /* ทำให้ responsive เพิ่มขึ้นสำหรับมือถือ */
+    @media (max-width: 600px) {
       td {
-        border: none;
-        position: relative;
-        padding-left: 50%;
-        text-align: left;
+        font-size: calc(1em + 2vw);
+        padding: 15px;
       }
 
-      td:before {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-        font-weight: bold;
-        color: #4CAF50;
+      table {
+        display: block;
+        overflow-x: auto;
       }
-
-      /* กำหนดข้อความ label สำหรับแต่ละคอลัมน์ */
-      td:nth-of-type(1):before { content: "Column 1"; }
-      td:nth-of-type(2):before { content: "Column 2"; }
-      td:nth-of-type(3):before { content: "Column 3"; }
-      /* เพิ่มต่อถ้าตารางมีคอลัมน์มากกว่า 3 */
     }
   </style>
 </head>
 <body>
-
-  <table>
-    <thead>
-      <tr>
-        <th>firstcell</th>
-        <th>secondcell</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Turn-in directory:</td>
-        <td>ex06/</td>
-      </tr>
-      <tr>
-        <td>Files to turn in:</td>
-        <td>responsive.html</td>
-      </tr>
-      <tr>
-        <td>Allowed functions:</td>
-        <td>None</td>
-      </tr>
-    </tbody>
+  <table border="1">
+    <tr>
+      <td class="first-cell">First cell</td>
+      <td class="second-cell">Second cell</td>
+    </tr>
   </table>
-
 </body>
 </html>
+
