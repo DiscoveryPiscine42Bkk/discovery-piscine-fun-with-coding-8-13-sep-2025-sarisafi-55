@@ -1,79 +1,78 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <title>Basics</title>
     <style>
         body {
-            background-color: pink; /* พื้นหลังสีชมพู */
-            margin: 0;
-            padding: 20px;
+            background-color: pink;
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
         }
 
         h1 {
-            color: white;
             text-align: center;
             font-size: 3em;
+            margin-top: 40px;
         }
 
         .images {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             margin-top: 40px;
         }
 
         .images img {
-            width: 250px;
+            width: 300px;
             height: auto;
             border: 2px solid white;
-            border-radius: 8px;
         }
 
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 200px;
+        .images a {
+            text-align: center;
+            display: block;
             margin-top: 10px;
+            color: white;
+            text-decoration: underline;
         }
 
         hr {
-            margin: 50px 0;
-            border: none;
-            border-top: 2px solid white;
+            margin: 60px auto;
+            width: 80%;
+            border: 1px solid white;
         }
 
         .footer {
             text-align: right;
-            font-style: italic;
             font-family: monospace;
+            font-style: italic;
+            padding: 20px;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <!-- หัวเรื่องใหญ่ มีอักขระพิเศษ -->
-    <h1>Welcome to Shop ✨</h1>
 
-    <!-- รูปภาพ 2 รูปเรียงข้างกัน -->
+    <h1>Welcome to Basics ✨</h1>
+
     <div class="images">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/EBay_logo.png" alt="eBay">
+        <div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Amazon_logo.svg/2560px-Amazon_logo.svg.png" alt="Amazon">
+            <a href="https://www.amazon.com" target="_blank">Visit Amazon</a>
+        </div>
+        <div>
+            <img src="https://1000logos.net/wp-content/uploads/2017/08/Logo-eBay.png" alt="eBay">
+            <a href="https://www.ebay.com" target="_blank">Visit eBay</a>
+        </div>
     </div>
 
-    <!-- ลิงก์ใต้แต่ละภาพ -->
-    <div class="links">
-        <a href="https://www.amazon.com" target="_blank">Go to Amazon</a>
-        <a href="https://www.ebay.com" target="_blank">Go to eBay</a>
-    </div>
-
-    <!-- เส้นแบ่งแนวนอน -->
     <hr>
 
-    <!-- ส่วนล่าง ขวา ตัวเอียง font monospace -->
     <div class="footer">
-        © wil 2025
+        © syaowabu 2025
     </div>
+
 </body>
 </html>
