@@ -1,20 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Change Background</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="background.css">
 </head>
 <body>
-  <button id="changeBgBtn">Change Background</button>
+  <button id="changeBtn">Change Background</button>
 
-  <script>
-    $(document).ready(function() {
-      $('#changeBgBtn').click(function() {
-        const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-        $('body').css('background-color', randomColor);
-      });
-    });
-  </script>
+  <script src="background.js"></script>
 </body>
 </html>
